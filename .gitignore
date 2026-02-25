@@ -1,0 +1,5 @@
+30-Days-Of-python
+__pycache__/
+.DS_Store
+.venv/
+venv/
