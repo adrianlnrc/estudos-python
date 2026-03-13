@@ -7,9 +7,9 @@ contas = {
 def consultar_saldo(usuario):
     saldo = contas[usuario]
     print(f"seu saldo atual é {saldo}!")
-   
-    pass
+
 def depositar(usuario, valor):
+    
 
 
     
