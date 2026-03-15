@@ -9,7 +9,7 @@ print("""
 while True: 
 
     try:
-        op = int(input("digite a operacao desejada: (1)soma (2)subtracao (3)multiplicacao (4)divisao (5) sair"))
+        op = float(input("digite a operacao desejada: (1)soma (2)subtracao (3)multiplicacao (4)divisao (5) sair: "))
     
         if op == 1:
             resultado = operacoes.soma(0,0)
