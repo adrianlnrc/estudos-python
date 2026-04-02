@@ -12,15 +12,12 @@ def registrar_agua(nome,quantidade):
     print(f" foi adicionado {quantidade} ml,  total {total_consumido}")
 
 def exibir_total():
-    print("Status da meta")
-
     for nome, total_ml in consumo_agua.items():
         if total_ml >= meta_diaria:
-            print(f"parabens, a meta {meta_diaria} foi batida: {total_ml}")
+            print(f"parabens {nome}, a meta batida: {total_ml} total ingerido {meta_diaria}")
         else: 
             faltam = meta_diaria - total_ml
-            print(f"ainda falta pouco para bater a meta {meta_diaria}, total ingerido {total_ml} ")
-        print(f" {nome}: {total_ml}")
+            print(f"que pena {nome}, ainda falta pouco para bater a meta {meta_diaria}, total ingerido {total_ml} ")
     
 
 
@@ -41,6 +38,7 @@ while True:
             registrar_agua(nome,quantidade)
         
         elif op == 2: 
+            print("Status da meta")
             exibir_total()
         
         else: 
