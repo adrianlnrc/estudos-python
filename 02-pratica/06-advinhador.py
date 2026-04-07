@@ -1,5 +1,5 @@
 
-def binary_Search(arr, item):
+def binary_Search(arr):
     baixo = 0
     alto = len(arr) - 1
     tentativas = 0
@@ -7,15 +7,13 @@ def binary_Search(arr, item):
     while baixo <= alto: 
         meio = (baixo + alto) // 2
         chute = arr[meio]
-        usuario = input(f" O numero: {chute} é (Maior),(Menor) ou acertei? (Acertou): ").lower()
-        if usuario == "menor":
+        tentativas += 1
+        num_usuario = input(f"O meu chute foi {chute}. O seu número é (Menor), (Maior) ou (Acertou)? ").lower()
+        if num_usuario == "maior":
             baixo = meio + 1
-            tentativas += 1
-        elif usuario == "maior":
+        elif num_usuario == "menor":
             alto = meio - 1
-            tentativas += 1
-        elif usuario == "acertou":
-            tentativas += 1
+        elif num_usuario == "acertou":
             return (f"Em {tentativas} tentativas, Resultado: {chute}")
         else:
             print("Digite apenas: maior, menor ou acertou")
@@ -29,9 +27,9 @@ while True:
             print("digite apenas numeros entre 1 a 100")
         else:
             print(f"numero digitado: {num}")
-            resultado = binary_Search(arr,num)
+            resultado = binary_Search(arr)
             print(resultado)
             break
     except ValueError:
-        print("ERRO, digite apenas numeros")
+        print(f"ERRO , digite apenas numeros")
 
