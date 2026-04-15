@@ -1,21 +1,30 @@
-import time 
-import random
-pontuacoes = [random.randint(1, 5_000_001) for _ in range(5_000_001)]
+
+pontuacoes = [150, 24, 79, 312, 5, 99]
 
 
 def busca_maior(arr):
-    maior_numero = 0
-    for elemento in arr:
-        if elemento > maior_numero:
-            maior_numero = elemento
+    maior = arr[0]
+    maior_indice = 0
 
-    return maior_numero
+    for i in range(1, len(arr)):
+        if arr[i] > maior:
+            maior = arr[i]
+            maior_indice = i
+    return maior_indice
 
-inicio = time.time()
 
-resultado = busca_maior(pontuacoes)
+def SelectionSort(arr):
+    nova_lista = []
+    for i in range(len(arr)):
+        maior = busca_maior(arr)
+        nova_lista.append(arr.pop(maior))
+    return nova_lista
 
-final = time.time()
-print(resultado)
+    
+teste_buscaMaior = busca_maior(pontuacoes)
+print(teste_buscaMaior)
 
-print(f"o tempo de execucao foi de {final - inicio:.6f}")
+lista_baguncada = [1,55,22,95,31,59,23,77,58,14,21]
+teste_SelectionSort = SelectionSort(lista_baguncada)
+
+
