@@ -9,6 +9,7 @@ mascara = {
 }
 
 dados = requests.get(url,headers=mascara)
+statusDaRequisicao = dados.status_code
 sopa = bs(dados.text, 'html.parser')
 slogan = sopa.find("h2")
 
